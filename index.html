@@ -5,108 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Vishwas Dhabhai — Data Scientist and MSE Data Science student at the University of Pennsylvania.">
   <title>Vishwas Dhabhai</title>
+  <link rel="icon" type="image/svg+xml" href="https://academicpages.github.io/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://academicpages.github.io/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://academicpages.github.io/images/apple-touch-icon-180x180.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="site">
-    <aside class="sidebar">
-      <a class="home-name" href="#top">Vishwas Dhabhai</a>
-      <img class="portrait" src="profile.jpg" alt="Profile portrait">
-      <p class="social-links">
-        <a href="mailto:vishwas.dhabhai@seas.upenn.edu">email</a> |
-        <a href="https://github.com/vishwas7-mle" target="_blank" rel="noreferrer">github</a> |
-        <a href="resume.pdf">cv</a>
-      </p>
-      <nav aria-label="Primary navigation">
-        <a href="#about">About Me</a>
-        <a href="#research">Research Interests</a>
+  <header class="masthead-bar">
+    <nav class="greedy-nav" aria-label="Site navigation">
+      <a class="masthead-home" href="#top">Vishwas Dhabhai</a>
+      <div class="masthead-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#activities">Activities</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <a href="resume.pdf">CV</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <i class="fa-solid fa-moon theme-toggle__icon" aria-hidden="true"></i>
+      </button>
+    </nav>
+  </header>
+  <div class="page-shell">
+    <aside class="masthead">
+      <img class="portrait" src="profile.jpg" alt="Portrait of Vishwas Dhabhai">
+      <p class="role"><span>Data Science M.S. Student@UPenn</span></p>
+      <a class="follow" href="mailto:vishwas7@engineering.upenn.edu">Get in touch</a>
+      <ul class="profile-details">
+        <li><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>Philadelphia, US</li>
+        <li><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>University of Pennsylvania</li>
+        <li><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i><a href="mailto:vishwas7@engineering.upenn.edu">Email</a></li>
+        <li><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i><a href="https://github.com/vishwas7-mle" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i><a href="https://www.linkedin.com/in/vishwas-9402633b9" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><i class="fas fa-fw fa-file-lines icon-pad-right" aria-hidden="true"></i><a href="resume.pdf">Curriculum Vitae</a></li>
+      </ul>
     </aside>
-
     <main id="top" class="content">
-      <section id="about" class="intro">
-        <p>I am a Data Scientist at Santander Corporate &amp; Investment Banking and an MSE Data Science student at the <a href="https://www.upenn.edu/" target="_blank" rel="noreferrer">University of Pennsylvania</a>. My interests lie in machine learning, NLP, LLMs, neurotechnology, and computational neuroscience.</p>
-        <p>My work combines data-driven modeling with intelligent systems. I am especially interested in reliable language technology, reasoning systems, and machine-learning methods that help us understand complex human and real-world data.</p>
-        <p>Previously, I worked in Data &amp; AI at Incedo and as a Machine Learning Intern at IBM. I am currently looking for research collaborations and pre-doctoral research opportunities in ML/NLP, intelligent systems, and computational neuroscience.</p>
+      <section id="about" class="opening">
+        <h1>Vishwas Dhabhai</h1>
+        <p>I am a Data Science M.S. candidate at the University of Pennsylvania (Expected Spring 2028), mentored by Prof. <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a>. My research interests are broadly in distributed systems for large-scale machine learning workloads — how post-training, model serving, and retrieval get built and scaled in practice. I'm particularly drawn to the systems side of agentic and RL-based workflows, where training, rollouts, and evaluation all have to run reliably at scale, and I'd like to understand that infrastructure better.</p>
+        <p><strong>I am seeking research collaborations, as well as full-time pre-doctoral research roles in industry starting in 2026.</strong></p>
+        <p>At <a href="https://www.santandercib.com/" target="_blank" rel="noreferrer">Santander Corporate &amp; Investment Banking</a>, I worked on <strong>distributed data infrastructure</strong> for equity derivatives trading building data pipelines with <strong>parallel, partition-based execution across clusters</strong> to process millions of high-frequency market records daily, sustaining the low latency real-time trading desks need.</p>
+        <p>Before academia, I spent ~1.5 years in Data and AI engineering — building LLM-powered automation systems at <a href="https://www.incedoinc.com/" target="_blank" rel="noreferrer">Incedo</a> and machine learning models as a co-op at <a href="https://www.ibm.com/in-en" target="_blank" rel="noreferrer">IBM</a>.</p>
       </section>
-
-      <hr>
-      <section id="research">
-        <h2>Research Interests</h2>
-        <p>My research interests include:</p>
+      <section id="mentors">
+        <h2>Mentors</h2>
         <ul>
-          <li><strong>Natural language processing and LLMs:</strong> reliable, useful systems for retrieval, reasoning, and language understanding.</li>
-          <li><strong>Neurotechnology and intelligent systems:</strong> computational approaches to brain–computer interfaces, cognitive systems, and neural data.</li>
-          <li><strong>Machine learning for real-world data:</strong> robust modeling, time-series analysis, anomaly detection, and scalable data systems.</li>
+          <li>Professor <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a> (University of Pennsylvania)</li>
+          <li>Professor <a href="https://www.santoshvenkatesh.com/" target="_blank" rel="noreferrer">Santosh S. Venkatesh</a> (University of Pennsylvania)</li>
         </ul>
       </section>
-
-      <hr>
+      <section id="research">
+        <h2>Research</h2>
+        <p>My interests sit at the intersection of machine learning and systems:</p>
+        <div class="research-list">
+          <article><h3>Distributed systems for LLM workloads</h3><p>Efficient, reliable infrastructure for post-training pipelines, multi-stage workloads, and large-scale model development.</p></article>
+          <article><h3>LLM serving and retrieval</h3><p>High-throughput, low-latency model serving, retrieval systems, scheduling, caching, and resource-aware execution.</p></article>
+          <article><h3>Agentic RL infrastructure</h3><p>Systems that make training, rollouts, evaluation, and iteration for agentic learning more efficient and dependable.</p></article>
+        </div>
+      </section>
       <section id="experience">
         <h2>Experience</h2>
-        <article class="entry">
-          <h3>Data Scientist II <span>· Santander Corporate &amp; Investment Banking</span></h3>
-          <p class="meta">Oct 2024 – Present · Pre/Post Trade Department · Warsaw / Remote</p>
-          <ul>
-            <li>Engineered scalable Spark and Databricks pipelines on AWS EMR for high-frequency market data and quantitative modeling.</li>
-            <li>Analyzed trade volumes and loss events using Python and Statsmodels to identify anomalies and volatility trends.</li>
-            <li>Built automated validation and monitoring systems for millions of daily equity-derivatives records.</li>
-          </ul>
-        </article>
-        <article class="entry">
-          <h3>Software Engineer <span>· Incedo Inc.</span></h3>
-          <p class="meta">Jul 2023 – Oct 2024 · Data &amp; AI Department · Gurugram, India</p>
-          <ul>
-            <li>Developed BrainSpark, an AI agent for automated software-testing script generation.</li>
-            <li>Built Selenium-based XPath extraction and GPT-4o, RAG, and VectorDB workflows for QA automation.</li>
-          </ul>
-        </article>
-        <article class="entry">
-          <h3>Machine Learning Intern <span>· IBM</span></h3>
-          <p class="meta">May 2022 – Jun 2022 · Data &amp; AI · Remote</p>
-          <ul><li>Built a multiclass model over 10,000 customer messages, achieving 82% accuracy, and analyzed customer-journey trends.</li></ul>
-        </article>
+        <div class="timeline">
+          <article class="timeline-entry"><h3>Data Scientist II <span>@ Santander Corporate &amp; Investment Banking</span></h3><p class="meta">Oct 2024 – Present · Pre/Post Trade Department · Warsaw, Poland / Remote</p></article>
+          <article class="timeline-entry"><h3>Software Engineer <span>@ Incedo Inc.</span></h3><p class="meta">Jul 2023 – Oct 2024 · Data &amp; AI Department · Gurugram, India</p></article>
+          <article class="timeline-entry"><h3>Machine Learning Intern <span>@ IBM</span></h3><p class="meta">May 2022 – Jun 2022 · Data &amp; AI · Remote</p></article>
+        </div>
       </section>
-
-      <hr>
       <section id="education">
         <h2>Education</h2>
-        <article class="entry">
-          <h3>University of Pennsylvania</h3>
-          <p>Master of Science in Engineering, Data Science</p>
-          <p class="meta">Aug 2025 – Aug 2027 · GPA: 4.00 / 4.00</p>
-        </article>
-        <article class="entry">
-          <h3>NMIMS, Mumbai</h3>
-          <p>B.Tech (Honors), Information Technology · Specialization in Machine Learning Models</p>
-          <p class="meta">Jul 2019 – Jul 2023 · GPA: 3.60 / 4.00</p>
-        </article>
-        <p><strong>Coursework:</strong> Machine Learning, Deep Learning, NLP, Pattern &amp; Anomaly Detection, Data Structures &amp; Algorithms, Databases, Linear Algebra, Probability &amp; Statistics.</p>
+        <div class="timeline">
+          <article class="timeline-entry"><h3>Master of Science in Engineering, Data Science <span>@ University of Pennsylvania</span></h3><p class="meta">Jan 2026 – Jan 2028 · GPA: 4.00 / 4.00</p></article>
+          <article class="timeline-entry"><h3>B.Tech (Honors), Information Technology <span>@ NMIMS, Mumbai</span></h3><p class="meta">Jul 2019 – Jul 2023 · GPA: 3.60 / 4.00 · Specialization in Machine Learning Models</p></article>
+        </div>
       </section>
-
-      <hr>
       <section id="activities">
-        <h2>Activities</h2>
-        <ul>
-          <li><strong>Neurotech@Penn:</strong> Core board member (2026); organized a global Ivy League neurotech hackathon in San Francisco.</li>
-          <li><strong>Claude Builder's Club at Penn:</strong> Research Lead; led sentiment-analysis research on Penn students' use of LLMs.</li>
-          <li><strong>Rotary Club of Udaipur:</strong> Collaborated on installing prosthetic hands for individuals missing upper limbs.</li>
-          <li><strong>Lawn Tennis:</strong> Professional player; represented the city in state-level tournaments.</li>
-        </ul>
+        <h2>Honors &amp; Services</h2>
+        <ul><li>Neurotech@Penn: Core board member (2026); Research Lead</li><li>Claude Builder's Club at Penn: Research Lead</li><li>Rotary Club of Udaipur: Volunteering</li><li>Lawn Tennis: Professional player</li></ul>
       </section>
-
-      <hr>
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>I am best reached at <a href="mailto:vishwas.dhabhai@seas.upenn.edu">vishwas.dhabhai@seas.upenn.edu</a>. Please feel free to reach out about research, collaboration, or data and AI work.</p>
-        <p>For a detailed overview of my background, please see my <a href="resume.pdf">CV</a>.</p>
+      <section id="misc">
+        <h2>Misc.</h2>
+        <p>In my free time, I like painting, travelling, and play lawn tennis!</p>
       </section>
-      <footer>Hosted on GitHub Pages · © 2026 Vishwas Dhabhai</footer>
+      <footer>© Copyright 2026 Vishwas Dhabhai. Last updated: Aug 18, 2026.</footer>
     </main>
   </div>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
+
+    const applyTheme = (theme) => {
+      const isDark = theme === 'dark';
+      document.body.setAttribute('data-theme', theme);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeIcon.classList.toggle('fa-moon', !isDark);
+      themeIcon.classList.toggle('fa-sun', isDark);
+      localStorage.setItem('theme', theme);
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme || 'light';
+    applyTheme(initialTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
