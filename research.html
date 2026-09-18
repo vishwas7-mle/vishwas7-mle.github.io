@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research interests and reading notes from Vishwas Dhabhai.">
+  <title>Research &amp; Notes · Vishwas Dhabhai</title>
+  <link rel="icon" type="image/svg+xml" href="https://academicpages.github.io/images/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead-bar">
+    <nav class="greedy-nav" aria-label="Site navigation">
+      <a class="masthead-home" href="index.html"><span class="desktop-name">Vishwas Dhabhai</span><span class="mobile-name">Vishwas D.</span></a>
+      <div class="masthead-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="research.html">Research &amp; Notes</a>
+        <a href="experience.html">Education &amp; Experience</a>
+        <a href="resume.pdf?v=20260918">CV</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme" aria-pressed="false"><i class="fa-solid fa-moon theme-toggle__icon" aria-hidden="true"></i></button>
+    </nav>
+  </header>
+  <div class="page-shell">
+    <aside class="masthead">
+      <img class="portrait" src="profile.jpg" alt="Portrait of Vishwas Dhabhai">
+      <p class="role"><span>Data Science M.S. Candidate at UPenn</span></p>
+      <a class="follow" href="mailto:vishwas7@engineering.upenn.edu">Get in touch</a>
+      <ul class="profile-details">
+        <li><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>Philadelphia, US</li>
+        <li><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>University of Pennsylvania</li>
+        <li><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i><a href="mailto:vishwas7@engineering.upenn.edu">Email</a></li>
+        <li><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i><a href="https://github.com/vishwas7-mle" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i><a href="https://www.linkedin.com/in/vishwas-9402633b9" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><i class="fas fa-fw fa-file-lines icon-pad-right" aria-hidden="true"></i><a href="resume.pdf?v=20260918">Curriculum Vitae</a></li>
+      </ul>
+    </aside>
+    <main class="content">
+      <section id="research">
+        <h1>Research</h1>
+        <p>My interests sit at the intersection of machine learning and systems:</p>
+        <div class="research-list">
+          <article><h3>Data curation and selection for LLM training</h3><p>Choosing the right training and fine-tuning data for a target task — data representations, selection algorithms, and the trade-offs between them.</p></article>
+          <article><h3>Distributed systems for LLM workloads</h3><p>Efficient, reliable infrastructure for post-training pipelines, multi-stage workloads, and large-scale model development.</p></article>
+          <article><h3>LLM serving and retrieval</h3><p>High-throughput, low-latency model serving, retrieval systems, scheduling, caching, and resource-aware execution.</p></article>
+          <article><h3>Agentic systems and self-improvement</h3><p>Systems that make training, rollouts, evaluation, and iteration for agentic learning more efficient and dependable — including infrastructure for pipelines and agents that evaluate and improve themselves over time.</p></article>
+        </div>
+      </section>
+      <section id="notes">
+        <h2>Notes</h2>
+        <p>Papers, tools, and repos I've been reading lately — not a formal research statement, just what's caught my attention.</p>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2602.14696" target="_blank" rel="noreferrer">A Critical Look at Targeted Instruction Selection</a> — disentangling data representation from selection algorithm in targeted instruction selection for LLM fine-tuning.</li>
+          <li><a href="https://www.sh-reya.com/moar_preprint.pdf" target="_blank" rel="noreferrer">MOAR: Multi-Objective Agentic Rewrites</a> — a cost- and accuracy-aware optimizer for LLM-powered data processing pipelines, built on DocETL.</li>
+          <li><a href="https://github.com/Human-Agent-Society/reef" target="_blank" rel="noreferrer">Reef</a> — continual learning infrastructure for self-improving agents.</li>
+        </ul>
+      </section>
+      <footer>© Copyright 2026 Vishwas Dhabhai. Last updated: Aug 18, 2026.</footer>
+    </main>
+  </div>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
+    const applyTheme = (theme) => {
+      const isDark = theme === 'dark';
+      document.body.setAttribute('data-theme', theme);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeIcon.classList.toggle('fa-moon', !isDark);
+      themeIcon.classList.toggle('fa-sun', isDark);
+      localStorage.setItem('theme', theme);
+    };
+    applyTheme(localStorage.getItem('theme') || 'light');
+    themeToggle.addEventListener('click', () => applyTheme(document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+  </script>
+</body>
+</html>

@@ -14,16 +14,15 @@
 <body>
   <header class="masthead-bar">
     <nav class="greedy-nav" aria-label="Site navigation">
-      <a class="masthead-home" href="#top">
+      <a class="masthead-home" href="index.html">
         <span class="desktop-name">Vishwas Dhabhai</span>
         <span class="mobile-name">Vishwas D.</span>
       </a>
       <div class="masthead-links">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="resume.pdf">CV</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="research.html">Research &amp; Notes</a>
+        <a href="experience.html">Education &amp; Experience</a>
+        <a href="resume.pdf?v=20260918">CV</a>
       </div>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme" aria-pressed="false">
         <i class="fa-solid fa-moon theme-toggle__icon" aria-hidden="true"></i>
@@ -33,7 +32,7 @@
   <div class="page-shell">
     <aside class="masthead">
       <img class="portrait" src="profile.jpg" alt="Portrait of Vishwas Dhabhai">
-      <p class="role"><span>Data Science M.S. Student@UPenn</span></p>
+      <p class="role"><span>Data Science M.S. Candidate at UPenn</span></p>
       <a class="follow" href="mailto:vishwas7@engineering.upenn.edu">Get in touch</a>
       <ul class="profile-details">
         <li><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>Philadelphia, US</li>
@@ -41,54 +40,28 @@
         <li><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i><a href="mailto:vishwas7@engineering.upenn.edu">Email</a></li>
         <li><i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"></i><a href="https://github.com/vishwas7-mle" target="_blank" rel="noreferrer">GitHub</a></li>
         <li><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i><a href="https://www.linkedin.com/in/vishwas-9402633b9" target="_blank" rel="noreferrer">LinkedIn</a></li>
-        <li><i class="fas fa-fw fa-file-lines icon-pad-right" aria-hidden="true"></i><a href="resume.pdf">Curriculum Vitae</a></li>
+        <li><i class="fas fa-fw fa-file-lines icon-pad-right" aria-hidden="true"></i><a href="resume.pdf?v=20260918">Curriculum Vitae</a></li>
       </ul>
     </aside>
     <main id="top" class="content">
       <section id="about" class="opening">
         <h1>Vishwas Dhabhai</h1>
-        <p>I am a Data Science M.S. candidate at the University of Pennsylvania (Expected Spring 2028), mentored by Prof. <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a>. My research interests are broadly in distributed systems for large-scale machine learning workloads — how post-training, model serving, and retrieval get built and scaled in practice. I'm particularly drawn to the systems side of agentic and RL-based workflows, where training, rollouts, and evaluation all have to run reliably at scale, and I'd like to understand that infrastructure better.</p>
+        <p>I am a Data Science M.S. candidate at the University of Pennsylvania (Expected Spring 2028), mentored by Prof. <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a>. My research interests center on the infrastructure that spans the full lifecycle of building and improving large models and agents — from selecting what data they train on, to how they're trained and served, to how agentic systems evaluate and improve themselves over time. I'm particularly drawn to the systems side of this lifecycle: making data curation, post-training, serving, and agentic self-improvement loops run efficiently and reliably at scale.</p>
         <p><strong>I am seeking research collaborations, as well as full-time pre-doctoral research roles in industry starting in 2026.</strong></p>
         <p>At <a href="https://www.santandercib.com/" target="_blank" rel="noreferrer">Santander Corporate &amp; Investment Banking</a>, I worked on <strong>distributed data infrastructure</strong> for equity derivatives trading building data pipelines with <strong>parallel, partition-based execution across clusters</strong> to process millions of high-frequency market records daily, sustaining the low latency real-time trading desks need.</p>
-        <p>Before academia, I spent ~1.5 years in Data and AI engineering — building LLM-powered automation systems at <a href="https://www.incedoinc.com/" target="_blank" rel="noreferrer">Incedo</a> and machine learning models as a co-op at <a href="https://www.ibm.com/in-en" target="_blank" rel="noreferrer">IBM</a>.</p>
+        <p>Previously, I spent ~1.5 years in Data and AI engineering — building LLM-powered automation systems at <a href="https://www.incedoinc.com/" target="_blank" rel="noreferrer">Incedo</a> and machine learning models as a co-op at <a href="https://www.ibm.com/in-en" target="_blank" rel="noreferrer">IBM</a>.</p>
       </section>
       <section id="mentors">
         <h2>Mentors</h2>
         <ul>
-          <li>Professor <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a> (University of Pennsylvania)</li>
-          <li>Professor <a href="https://www.santoshvenkatesh.com/" target="_blank" rel="noreferrer">Santosh S. Venkatesh</a> (University of Pennsylvania)</li>
+          <li><a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a> (Professor at University of Pennsylvania)</li>
+          <li><a href="https://www.engineering.upenn.edu/~hassani/" target="_blank" rel="noreferrer">Hamed Hassani</a> (Professor at University of Pennsylvania)</li>
+          <li><a href="https://monagandhi09.github.io/" target="_blank" rel="noreferrer">Mona Gandhi</a> (Ph.D. in Computer Science at The Ohio State University)</li>
+          <li><a href="https://www.linkedin.com/in/ahmelkady/" target="_blank" rel="noreferrer">Ahmed Elkady</a> (Member of Technical Staff at <a href="https://www.anyscale.com/" target="_blank" rel="noreferrer">Anyscale</a>)</li>
         </ul>
       </section>
-      <section id="research">
-        <h2>Research</h2>
-        <p>My interests sit at the intersection of machine learning and systems:</p>
-        <div class="research-list">
-          <article><h3>Distributed systems for LLM workloads</h3><p>Efficient, reliable infrastructure for post-training pipelines, multi-stage workloads, and large-scale model development.</p></article>
-          <article><h3>LLM serving and retrieval</h3><p>High-throughput, low-latency model serving, retrieval systems, scheduling, caching, and resource-aware execution.</p></article>
-          <article><h3>Agentic RL infrastructure</h3><p>Systems that make training, rollouts, evaluation, and iteration for agentic learning more efficient and dependable.</p></article>
-        </div>
-      </section>
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <article class="timeline-entry"><h3>Data Scientist II <span>@ Santander Corporate &amp; Investment Banking</span></h3><p class="meta">Oct 2024 – Present · Pre/Post Trade Department · Warsaw, Poland / Remote</p></article>
-          <article class="timeline-entry"><h3>Software Engineer <span>@ Incedo Inc.</span></h3><p class="meta">Jul 2023 – Oct 2024 · Data &amp; AI Department · Gurugram, India</p></article>
-          <article class="timeline-entry"><h3>Machine Learning Intern <span>@ IBM</span></h3><p class="meta">May 2022 – Jun 2022 · Data &amp; AI · Remote</p></article>
-        </div>
-      </section>
-      <section id="education">
-        <h2>Education</h2>
-        <div class="timeline">
-          <article class="timeline-entry"><h3>Master of Science in Engineering, Data Science <span>@ University of Pennsylvania</span></h3><p class="meta">Jan 2026 – Jan 2028 · GPA: 4.00 / 4.00</p></article>
-          <article class="timeline-entry"><h3>B.Tech (Honors), Information Technology <span>@ NMIMS, Mumbai</span></h3><p class="meta">Jul 2019 – Jul 2023 · GPA: 3.60 / 4.00 · Specialization in Machine Learning Models</p></article>
-        </div>
-      </section>
-      <section id="activities">
-        <h2>Honors &amp; Services</h2>
-        <ul><li>Neurotech@Penn: Core board member (2026); Research Lead</li><li>Claude Builder's Club at Penn: Research Lead</li><li>Rotary Club of Udaipur: Volunteering</li><li>Lawn Tennis: Professional player</li></ul>
-      </section>
-      <section id="misc">
-        <h2>Misc.</h2>
+      <section id="hobbies">
+        <h2>Hobbies</h2>
         <p>In my free time, I like painting, travelling, and play lawn tennis!</p>
       </section>
       <footer>© Copyright 2026 Vishwas Dhabhai. Last updated: Aug 18, 2026.</footer>
@@ -110,6 +83,38 @@
     const savedTheme = localStorage.getItem('theme');
     const initialTheme = savedTheme || 'light';
     applyTheme(initialTheme);
+
+    const timelines = [...document.querySelectorAll('.timeline')];
+    const timelineEntries = document.querySelectorAll('.timeline-entry');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.body.classList.add('timeline-enhanced');
+
+    const updateTimelineProgress = () => {
+      timelines.forEach((timeline) => {
+        const rect = timeline.getBoundingClientRect();
+        const progress = Math.min(100, Math.max(0, ((window.innerHeight * 0.68 - rect.top) / rect.height) * 100));
+        timeline.style.setProperty('--timeline-progress', `${progress}%`);
+      });
+    };
+
+    if (prefersReducedMotion) {
+      timelineEntries.forEach((entry) => entry.classList.add('is-visible'));
+      updateTimelineProgress();
+    } else {
+      const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            timelineObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      timelineEntries.forEach((entry) => timelineObserver.observe(entry));
+      updateTimelineProgress();
+      window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+      window.addEventListener('resize', updateTimelineProgress);
+    }
 
     themeToggle.addEventListener('click', () => {
       const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
