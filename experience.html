@@ -12,13 +12,8 @@
 <body>
   <header class="masthead-bar">
     <nav class="greedy-nav" aria-label="Site navigation">
-      <a class="masthead-home" href="index.html"><span class="desktop-name">Vishwas Dhabhai</span><span class="mobile-name">Vishwas Dhabhai</span></a>
-      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-links">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="masthead-links" id="mobile-nav-links">
+      <a class="masthead-home" href="index.html"><span class="desktop-name">Vishwas Dhabhai</span><span class="mobile-name">Vishwas D.</span></a>
+      <div class="masthead-links">
         <a href="index.html">Home</a>
         <a href="research.html">Research &amp; Notes</a>
         <a class="active" href="experience.html">Education &amp; Experience</a>
@@ -67,24 +62,6 @@
       localStorage.setItem('theme', theme);
     };
     applyTheme(localStorage.getItem('theme') || 'light');
-    const navToggle = document.querySelector('.nav-toggle');
-    const mastheadLinks = document.querySelector('.masthead-links');
-
-    if (navToggle && mastheadLinks) {
-      navToggle.addEventListener('click', () => {
-        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isExpanded));
-        mastheadLinks.classList.toggle('is-open', !isExpanded);
-      });
-
-      mastheadLinks.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          navToggle.setAttribute('aria-expanded', 'false');
-          mastheadLinks.classList.remove('is-open');
-        });
-      });
-    }
-
     const timelines = [...document.querySelectorAll('.timeline')];
     const timelineEntries = document.querySelectorAll('.timeline-entry');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
