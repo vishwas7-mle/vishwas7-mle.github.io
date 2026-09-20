@@ -16,9 +16,14 @@
     <nav class="greedy-nav" aria-label="Site navigation">
       <a class="masthead-home" href="index.html">
         <span class="desktop-name">Vishwas Dhabhai</span>
-        <span class="mobile-name">Vishwas D.</span>
+        <span class="mobile-name">Vishwas Dhabhai</span>
       </a>
-      <div class="masthead-links">
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="masthead-links" id="mobile-nav-links">
         <a class="active" href="index.html">Home</a>
         <a href="research.html">Research &amp; Notes</a>
         <a href="experience.html">Education &amp; Experience</a>
@@ -46,18 +51,22 @@
     <main id="top" class="content">
       <section id="about" class="opening">
         <h1>Vishwas Dhabhai</h1>
-        <p>I am a Data Science M.S. candidate at the University of Pennsylvania (Expected Spring 2028), mentored by Prof. <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a>. My research interests center on the infrastructure that spans the full lifecycle of building and improving large models and agents — from selecting what data they train on, to how they're trained and served, to how agentic systems evaluate and improve themselves over time. I'm particularly drawn to the systems side of this lifecycle: making data curation, post-training, serving, and agentic self-improvement loops run efficiently and reliably at scale.</p>
-        <p><strong>I am seeking research collaborations, as well as full-time pre-doctoral research roles in industry starting in 2026.</strong></p>
-        <p>At <a href="https://www.santandercib.com/" target="_blank" rel="noreferrer">Santander Corporate &amp; Investment Banking</a>, I worked on <strong>distributed data infrastructure</strong> for equity derivatives trading building data pipelines with <strong>parallel, partition-based execution across clusters</strong> to process millions of high-frequency market records daily, sustaining the low latency real-time trading desks need.</p>
-        <p>Previously, I spent ~1.5 years in Data and AI engineering — building LLM-powered automation systems at <a href="https://www.incedoinc.com/" target="_blank" rel="noreferrer">Incedo</a> and machine learning models as a co-op at <a href="https://www.ibm.com/in-en" target="_blank" rel="noreferrer">IBM</a>.</p>
+        <p class="desktop-only">I am a Data Science M.S. candidate at the University of Pennsylvania (Expected Spring 2028), mentored by Prof. <a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a>. My research interests center on the infrastructure that spans the full lifecycle of building and improving large models and agents — from selecting what data they train on, to how they're trained and served, to how agentic systems evaluate and improve themselves over time. I'm particularly drawn to the systems side of this lifecycle: making data curation, post-training, serving, and agentic self-improvement loops run efficiently and reliably at scale.</p>
+        <p class="mobile-only">I am a Data Science M.S. candidate at the University of Pennsylvania. My research interests center on the infrastructure that spans the full lifecycle of building and improving large models and agents.</p>
+        <p class="desktop-only"><strong>I am seeking research collaborations, as well as full-time pre-doctoral research roles in industry starting in 2026.</strong></p>
+        <p class="mobile-only"><strong>I am seeking research collaborations, as well as fulltime pre-doctoral research roles in industry starting in 2026.</strong></p>
+        <p class="desktop-only">At <a href="https://www.santandercib.com/" target="_blank" rel="noreferrer">Santander Corporate &amp; Investment Banking</a>, I worked on <strong>distributed data infrastructure</strong> for equity derivatives trading building data pipelines with <strong>parallel, partition-based execution across clusters</strong> to process millions of high-frequency market records daily, sustaining the low latency real-time trading desks need.</p>
+        <p class="mobile-only">At <a href="https://www.santandercib.com/" target="_blank" rel="noreferrer">Santander Corporate &amp; Investment Banking</a>, I built <strong>distributed data infrastructure</strong> for equity derivatives trading with <strong>parallel, partition-based execution across clusters</strong>.</p>
+        <p class="desktop-only">Previously, I spent ~1.5 years in Data and AI engineering — building LLM-powered automation systems at <a href="https://www.incedoinc.com/" target="_blank" rel="noreferrer">Incedo</a> and machine learning models as a co-op at <a href="https://www.ibm.com/in-en" target="_blank" rel="noreferrer">IBM</a>.</p>
+        <p class="mobile-only">Previously, I spent ~1.5 years in Data and AI engineering building LLM-powered automation systems at <a href="https://www.incedoinc.com/" target="_blank" rel="noreferrer">Incedo</a> and machine learning models as a co-op at <a href="https://www.ibm.com/in-en" target="_blank" rel="noreferrer">IBM</a>.</p>
       </section>
       <section id="mentors">
         <h2>Mentors</h2>
         <ul>
           <li><a href="https://boonloo.cis.upenn.edu/" target="_blank" rel="noreferrer">Boon Thau Loo</a> (Professor at University of Pennsylvania)</li>
           <li><a href="https://www.engineering.upenn.edu/~hassani/" target="_blank" rel="noreferrer">Hamed Hassani</a> (Professor at University of Pennsylvania)</li>
-          <li><a href="https://monagandhi09.github.io/" target="_blank" rel="noreferrer">Mona Gandhi</a> (Ph.D. in Computer Science at The Ohio State University)</li>
-          <li><a href="https://www.linkedin.com/in/ahmelkady/" target="_blank" rel="noreferrer">Ahmed Elkady</a> (Member of Technical Staff at <a href="https://www.anyscale.com/" target="_blank" rel="noreferrer">Anyscale</a>)</li>
+          <li><a href="https://monagandhi09.github.io/" target="_blank" rel="noreferrer">Mona Gandhi</a><span class="mentor-detail-desktop"> (Ph.D. in Computer Science at The Ohio State University)</span><span class="mentor-detail-mobile"> (PhD at The Ohio State University)</span></li>
+          <li><a href="https://www.linkedin.com/in/ahmelkady/" target="_blank" rel="noreferrer">Ahmed Elkady</a><span class="mentor-detail-ahmed"> (Member of Technical Staff at <a href="https://www.anyscale.com/" target="_blank" rel="noreferrer">Anyscale</a>)</span></li>
         </ul>
       </section>
       <section id="hobbies">
@@ -114,6 +123,24 @@
       updateTimelineProgress();
       window.addEventListener('scroll', updateTimelineProgress, { passive: true });
       window.addEventListener('resize', updateTimelineProgress);
+    }
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const mastheadLinks = document.querySelector('.masthead-links');
+
+    if (navToggle && mastheadLinks) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isExpanded));
+        mastheadLinks.classList.toggle('is-open', !isExpanded);
+      });
+
+      mastheadLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          mastheadLinks.classList.remove('is-open');
+        });
+      });
     }
 
     themeToggle.addEventListener('click', () => {
