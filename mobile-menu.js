@@ -1,12 +1,14 @@
 const menuButton = document.getElementById('mobile-menu-toggle');
 const menuLinks = document.getElementById('site-navigation-links');
+const menuIcon = menuButton.querySelector('i');
 const mobileMenuBreakpoint = window.matchMedia('(max-width: 800px)');
 
 const setMenuOpen = (isOpen) => {
   menuLinks.classList.toggle('is-open', isOpen);
   menuButton.setAttribute('aria-expanded', String(isOpen));
   menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-  menuButton.innerHTML = `<i class="fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}" aria-hidden="true"></i>`;
+  menuIcon.classList.toggle('fa-bars', !isOpen);
+  menuIcon.classList.toggle('fa-xmark', isOpen);
 };
 
 const updateMenuMode = () => {
