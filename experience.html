@@ -12,8 +12,9 @@
 <body>
   <header class="masthead-bar">
     <nav class="greedy-nav" aria-label="Site navigation">
-      <a class="masthead-home" href="index.html"><span class="desktop-name">Vishwas Dhabhai</span><span class="mobile-name">Vishwas D.</span></a>
-      <div class="masthead-links">
+      <a class="masthead-home" href="index.html"><span class="desktop-name">Vishwas Dhabhai</span><span class="mobile-name">Vishwas Dhabhai</span></a>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation-links" hidden><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <div id="site-navigation-links" class="masthead-links">
         <a href="index.html">Home</a>
         <a href="research.html">Research &amp; Notes</a>
         <a class="active" href="experience.html">Education &amp; Experience</a>
@@ -24,8 +25,10 @@
   </header>
   <div class="page-shell">
     <aside class="masthead">
-      <img class="portrait" src="profile.jpg" alt="Portrait of Vishwas Dhabhai">
-      <p class="role"><span>Data Science M.S. Candidate at UPenn</span></p>
+      <div class="profile-tile">
+        <img class="portrait" src="profile.jpg" alt="Portrait of Vishwas Dhabhai">
+        <p class="role"><span>Machine Learning Researcher<br>M.S. @ UPenn</span></p>
+      </div>
       <a class="follow" href="mailto:vishwas7@engineering.upenn.edu">Get in touch</a>
       <ul class="profile-details">
         <li><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>Philadelphia, US</li>
@@ -47,9 +50,10 @@
           <article class="timeline-entry"><h3>Bachelors of Technology (Honors), Information Technology</h3><p class="institution">NMIMS, Mumbai</p><p class="meta">Jul 2019 – Jul 2023</p><p class="details">GPA: 3.60 / 4.00</p><p class="details">Specialization in Machine Learning Models</p></article>
         </div>
       </section>
-      <footer>© Copyright 2026 Vishwas Dhabhai. Last updated: Aug 18, 2026.</footer>
+      <footer>© Copyright 2026 Vishwas Dhabhai. Last updated: Oct 3, 2026.</footer>
     </main>
   </div>
+  <script src="mobile-menu.js"></script>
   <script>
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('.theme-toggle__icon');

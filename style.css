@@ -71,24 +71,105 @@ footer { color: #999; font-size: 13px; }
 @media (max-width: 800px) {
   .greedy-nav, .page-shell { width: min(680px, calc(100% - 32px)); }
   .greedy-nav {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    position: relative;
+    display: flex;
     align-items: center;
-    gap: 8px 12px;
-    padding: 10px 0;
+    gap: 8px;
+    min-height: 64px;
+    padding: 8px 0;
   }
-  .masthead-home { margin-right: 0; }
+  .masthead-home { margin-right: auto; font-size: 16px; }
+  .masthead-home .desktop-name { display: none; }
+  .masthead-home .mobile-name { display: inline; }
   .masthead-links {
-    grid-column: 1 / -1;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 8px 18px;
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    z-index: 21;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 8px;
+    border: 1px solid var(--soft-border);
+    border-radius: 0 0 8px 8px;
+    background: var(--panel);
+    box-shadow: 0 8px 18px rgb(0 0 0 / 12%);
   }
-  .theme-toggle { margin-left: 0; }
-  .page-shell { display: block; padding-top: 30px; }
-  .masthead { position: static; margin: 0 0 40px; text-align: center; }
-  .portrait { width: 170px; margin: 0 auto; }
+  body.mobile-menu-ready .masthead-links { display: none; }
+  body.mobile-menu-ready .masthead-links.is-open { display: flex; }
+  .masthead-links a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  .masthead-links a.active { background: color-mix(in srgb, var(--blue) 10%, var(--panel)); }
+  .mobile-menu-toggle:not([hidden]) {
+    appearance: none;
+    display: inline-flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--soft-border);
+    border-radius: 6px;
+    color: var(--nav-text);
+    background: var(--button-bg);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .mobile-menu-toggle:hover, .mobile-menu-toggle:focus-visible {
+    color: var(--nav-hover);
+    background: var(--button-hover);
+  }
+  .mobile-menu-toggle:focus-visible, .masthead-links a:focus-visible, .theme-toggle:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+  .theme-toggle { width: 44px; height: 44px; margin-left: 0; }
+  .theme-toggle__icon { font-size: 14px; }
+  .page-shell { display: block; padding-top: 28px; }
+  .masthead { position: static; margin: 0 0 32px; text-align: center; }
+  .profile-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: min(100%, 360px);
+    margin: 0 auto 20px;
+    padding: 20px 18px;
+    border: 1px solid var(--soft-border);
+    border-radius: 8px;
+    background: var(--panel);
+    box-shadow: 0 4px 14px rgb(35 54 68 / 8%);
+  }
+  .portrait { width: 136px; margin: 0; border-width: 3px; }
+  .masthead .role { margin: 0; font-size: 14px; line-height: 1.45; white-space: normal; }
+  .masthead .role span {
+    display: inline-block;
+    max-width: 100%;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: var(--text-strong);
+    background: color-mix(in srgb, var(--blue) 10%, var(--panel));
+    font-size: 13px;
+    font-weight: 600;
+  }
   .profile-details { display: inline-block; text-align: left; }
+  body { font-size: 16px; line-height: 1.55; }
+  section { margin-bottom: 26px; padding-bottom: 26px; }
+  h1 { margin-top: 0; font-size: 30px; }
+  h2 { font-size: 23px; }
+  h3 { font-size: 16px; }
+  p, li { font-size: 15px; }
+  .meta { font-size: 13px; }
+  footer { font-size: 10px; white-space: nowrap; }
 }
 @media (max-width: 540px) {
   .masthead-bar {
@@ -97,73 +178,49 @@ footer { color: #999; font-size: 13px; }
     z-index: 20;
   }
   .greedy-nav {
-    width: calc(100% - 22px);
+    width: calc(100% - 24px);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
   }
   .masthead-home {
-    font-size: 12.5px;
+    font-size: 15px;
     white-space: nowrap;
-    margin-right: 0;
+    margin-right: auto;
   }
-  .masthead-home .desktop-name { display: none; }
-  .masthead-home .mobile-name { display: inline; }
-  .masthead-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 6px 8px;
-    flex: 1 1 auto;
-    min-width: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
+  .page-shell { width: calc(100% - 32px); padding-top: 24px; }
+  .masthead { margin-bottom: 24px; }
+  .profile-tile {
+    width: min(100%, 320px);
+    padding: 18px 16px;
+    border-color: #c6cdd1;
+    background: linear-gradient(145deg, #e9edef, #dce2e5);
+    box-shadow: inset 0 1px rgb(255 255 255 / 75%), 0 4px 14px rgb(35 54 68 / 10%);
   }
-  .masthead-links a[href="#about"] { display: none; }
-  .masthead-links::-webkit-scrollbar { display: none; }
-  .masthead-links a {
-    font-size: 10.5px;
-    white-space: nowrap;
-    letter-spacing: 0;
+  body[data-theme="dark"] .profile-tile {
+    border-color: #465158;
+    background: linear-gradient(145deg, #303a40, #242d32);
+    box-shadow: inset 0 1px rgb(255 255 255 / 7%), 0 4px 14px rgb(0 0 0 / 22%);
   }
-  .theme-toggle {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    margin-left: 0;
+  .masthead .role span {
+    color: #59636a;
+    background: #ffffff;
   }
-  .theme-toggle__icon { font-size: 9px; }
-  .page-shell { width: calc(100% - 22px); }
-  .masthead {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 18px;
-    position: static;
-    text-align: left;
+  body[data-theme="dark"] .masthead .role span {
+    color: #e1e6e9;
+    background: #424c52;
   }
-  .portrait {
-    width: 64px;
-    min-width: 64px;
-    margin: 0;
-    border-width: 2px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
-  }
-  .masthead .role {
-    margin: 0;
-    font-size: 11px;
-    line-height: 1.35;
-  }
+  .portrait { width: 124px; }
   .masthead .follow,
   .masthead .profile-details {
     display: none;
   }
-  body { font-size: 14px; }
   section { margin-bottom: 22px; padding-bottom: 22px; }
-  h1 { font-size: 24px; margin-top: 0; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 14px; }
-  p, li, .meta { font-size: 12.5px; }
+  h1 { font-size: 27px; }
+  h2 { font-size: 21px; }
+  p, li { font-size: 15px; }
+  .meta { font-size: 13px; }
+  footer { font-size: 9px; }
   .timeline {
     width: 100%;
     padding: 6px 0 6px 23px;
